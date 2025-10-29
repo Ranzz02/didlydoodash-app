@@ -1,0 +1,47 @@
+:root[data-theme='dark'] {
+  --color-primary: #0b1520;
+  --color-secondary: #162b3a;
+  --color-accent: #d7ecf8;
+  --color-contrast: #f4a261;
+  --color-neutral: #9aa7b3;
+  --color-error: #ef4444;
+  --color-success: #22c55e;
+  --color-shadow: rgba(0, 0, 0, 0.65);
+  --color-shadow-strong: rgba(0, 0, 0, 0.85);
+  
+}
+
+:root[data-theme='light'] {
+  --color-primary: #f9fafb;
+  --color-secondary: #e2e8f0;
+  --color-accent: #0b1520;
+  --color-contrast: #e68a00;
+  --color-neutral: #6b7280;
+  --color-error: #dc2626;
+  --color-success: #16a34a;
+  --color-shadow: rgba(0, 0, 0, 0.1);
+  --color-shadow-strong: rgba(0, 0, 0, 0.2);
+}
+
+:root {
+  color-scheme: dark light;
+
+  
+  --color-primary-light: color-mix(in srgb, var(--color-primary), white 8%);
+  --color-primary-dark: color-mix(in srgb, var(--color-primary), black 30%);
+
+  --color-secondary-light: color-mix(in srgb, var(--color-secondary), white 8%);
+  --color-secondary-dark: color-mix(in srgb, var(--color-secondary), black 30%);
+
+  --bg-primary-light: var(--color-primary-light);
+  --bg-primary: var(--color-primary);
+  --bg-primary-dark: var(--color-primary-dark);
+
+  --bg-secondary-light: var(--color-secondary-light);
+  --bg-secondary: var(--color-secondary);
+  --bg-secondary-dark: var(--color-secondary-dark);
+  
+  --text-primary: var(--color-accent);
+  --text-secondary: var(--color-neutral);
+  --border-color: var(--color-neutral);
+}

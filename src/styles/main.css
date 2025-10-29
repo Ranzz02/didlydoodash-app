@@ -1,0 +1,43 @@
+#root {
+	display: flex;
+	flex-flow: column;
+	position: relative;
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: var(--bg-primary);
+	color: var(--text-primary);
+}
+
+* {
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main-container {
+    flex: 1;
+	display: flex;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+
+.page-container {
+	flex: 1;
+	display: flex;
+	flex-flow: column;
+	position: relative;
+}
+
+.card {
+	background-color: var(--color-secondary);
+	color: var(--text-primary);
+	border-radius: 12px;
+	padding: 1rem;
+	box-shadow: 0 4px 8px var(--color-shadow);
+	transition: box-shadow 0.2s ease-in, background-color 0.3s ease;
+}
+
+.card:hover {
+	box-shadow: 0 8px 16px var(--color-shadow-strong);
+}

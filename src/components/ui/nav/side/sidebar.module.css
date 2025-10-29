@@ -1,0 +1,161 @@
+.sidenav {
+  gap: 8px;
+  margin: 0;
+  padding: 10px 8px;
+  width: 250px;
+  max-width: 250px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-secondary);
+  border-right: 1px solid var(--color-neutral);
+  transition: width 0.3s ease-in-out;
+}
+.sidenav.closed {
+  align-items: center;
+  width: 60px;
+}
+
+
+.toggle {
+  width: 100%;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 0 8px;
+  box-shadow: 0 3px 6px var(--color-shadow);
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.3s ease,
+    transform 0.2s ease;
+}
+.toggle:hover {
+  background-color: var(--bg-secondary-dark);
+  box-shadow: 0 5px 10px var(--color-shadow-strong);
+}
+
+.item {
+  display: flex;
+  padding: 8px 12px;
+  cursor: pointer;
+  color: var(--text-primary);
+  background-color: var(--bg-secondary-light);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 3px 6px var(--color-shadow);
+  border-radius: 12px;
+  text-decoration: none;
+}
+.item:hover {
+  background-color: var(--bg-secondary-dark);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 5px 10px var(--color-shadow-strong);
+  transition: 
+    border-color 0.2s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.sidenav.closed .item {
+  padding: 8px;
+  max-width: 50px;
+}
+
+.itemSelect {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  gap: 6px;
+} /* Label text */
+.itemSelect label {
+  color: var(--text-secondary);
+  font-size: medium;
+  font-weight: 500;
+  padding-left: 4px;
+  text-overflow: clip;
+}
+/* Styled <select> itself */
+.itemSelect select {
+  display:inline-flex;
+  appearance: none;
+  background-color: var(--bg-secondary-light);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  text-overflow: clip;
+  padding: 12px 8px;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px var(--color-shadow);
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.itemSelect::after {
+  content: "▼";
+  position: absolute;
+  right: 20px;
+  bottom: 12px;
+  pointer-events: none;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+} /* Hover & focus states */
+.itemSelect select:hover {
+  border-color: var(--color-accent);
+  background-color: var(--bg-secondary-dark);
+  box-shadow: 0 5px 10px var(--color-shadow-strong);
+} /* Dropdown options */
+.itemSelect select option {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.sidenav.closed .itemSelect {
+  align-items: center;
+  width: auto;
+}
+
+.sidenav.closed .itemSelect label {
+  display: none;
+}
+
+.sidenav.closed .itemSelect select {
+  width: 43px; /* match icon/button width */
+  min-width: 43px;
+  padding: 12px 8px;
+  border-radius: 12px;
+  box-shadow: 0 3px 6px var(--color-shadow);
+}
+
+.sidenav.closed .itemSelect::after {
+  display: none; /* ✅ hide the dropdown arrow when collapsed */
+}
+
+.item, .itemSelect {
+  margin: 2px 0;
+}
+
+.active {
+  background-color: var(--bg-secondary-dark);
+  border: 1px solid var(--color-contrast);
+  box-shadow: 0 0 5px color-mix(in srgb, var(--color-contrast), transparent 70%);
+  font-weight: bold;
+}
+
+.linkText {
+  padding-left: 12px;
+  white-space: nowrap;
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.3s ease 0.25s, transform 0.3s ease 0.25s;
+}
+
+.sidenav.closed .linkText {
+  opacity: 0;
+  transform: translateX(-20px);
+  width: 0;
+  overflow: hidden;
+  padding: 0;
+}
