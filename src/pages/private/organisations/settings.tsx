@@ -49,12 +49,12 @@ function OrganisationSettingPage() {
       <h1>{organisation?.name} Settings</h1>
 
       <form
-        style={{ margin: 0, padding: 0 }}
+        className="org_setting_form"
         onSubmit={handleSubmit(updateOrganisation)}
       >
-        <section>
-          <h2>General</h2>
-          <p>Manage basic organisation information.</p>
+        <section className="org_setting_section">
+          <h2 className="title">General</h2>
+          <p className="description">Manage basic organisation information.</p>
 
           <SettingCard title="Name" description="Change the organisations name">
             <input type="text" {...register("name")} />
@@ -84,9 +84,9 @@ function OrganisationSettingPage() {
           </SettingCard>
 
           <SettingCard title="Active Status" description="Toggle active state">
-            <label>
+            <label className="checkbox-container">
               <input type="checkbox" {...register("isActive")} />
-              Active
+              <span>Active</span>
             </label>
           </SettingCard>
 
@@ -96,15 +96,17 @@ function OrganisationSettingPage() {
         </section>
       </form>
 
-      <section>
-        <h2>Members</h2>
-        <p>Manage access and roles for your team.</p>
+      <section className="org_setting_section">
+        <h2 className="title">Members</h2>
+        <p className="description">Manage access and roles for your team.</p>
         {/* <MemberManagement /> */}
       </section>
 
-      <section className="danger">
-        <h2>Danger Zone</h2>
-        <p>Delete organisation or transfer ownership.</p>
+      <section className="org_setting_section danger">
+        <h2 className="title">Danger Zone</h2>
+        <p className="description">
+          Delete organisation or transfer ownership.
+        </p>
         <SettingCard
           title="Transfer Organisation"
           description="Transfer ownership of organisation to another member"

@@ -18,12 +18,6 @@
     background-color: var(--color-error-translucent);
 }
 
-.setting_card:hover {
-  background-color: var(--bg-secondary-light);
-  box-shadow: 0 5px 12px var(--color-shadow-strong);
-  transform: translateY(-1px);
-}
-
 .setting_card_header {
   display: flex;
   flex-direction: column;
@@ -39,9 +33,9 @@
 }
 
 .setting_card_header p {
-  margin: 0;
   color: var(--text-secondary);
   font-size: 0.95rem;
+  margin: 0;
 }
 
 .setting_card_body {
@@ -58,9 +52,51 @@
   border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: 8px 12px;
+  margin: 0;
   font-size: 0.95rem;
   box-shadow: 0 2px 4px var(--color-shadow);
   transition: border-color 0.2s ease, box-shadow 0.3s ease;
+}
+
+.setting_card_body .checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.setting_card_body .checkbox-container input[type="checkbox"] {
+  appearance: none;
+  width: 26px;
+  height: 26px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--bg-primary);
+  box-shadow: 0 2px 4px var(--color-shadow);
+  display: grid;
+  place-content: center;
+  transition: all 0.25s ease;
+}
+
+.setting_card_body .checkbox-container input[type="checkbox"]::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  background-color: var(--color-contrast);
+  transform: scale(0);
+  transition: transform 0.2s ease-in-out;
+}
+
+.setting_card_body .checkbox-container input[type="checkbox"]:checked::after {
+  transform: scale(1);
+}
+
+.setting_card_body .checkbox-container input[type="checkbox"]:checked {
+  border-color: var(--color-contrast);
+  background-color: color-mix(in srgb, var(--color-contrast), transparent 80%);
+  box-shadow: 0 3px 6px var(--color-shadow-strong);
 }
 
 .setting_card_body input:focus,

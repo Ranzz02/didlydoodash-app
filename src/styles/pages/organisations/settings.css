@@ -19,7 +19,12 @@
   padding-bottom: 8px;
 }
 
-.org_setting_content section {
+.org_setting_form {
+  margin: 0;
+  padding: 0;
+}
+
+.org_setting_content .org_setting_section {
   background-color: var(--bg-secondary);
   border-radius: 12px;
   border: 2px solid var(--color-accent);
@@ -31,12 +36,12 @@
   transition: background-color 0.2s ease;
 }
 
-.org_setting_content section.danger {
+.org_setting_content .org_setting_section.danger {
     background-color: var(--color-error-translucent);
     border-color: var(--color-error-dark);
 }
 
-.org_setting_content section h2 {
+.org_setting_content .org_setting_section .title {
     margin: 0;
     margin-bottom: 2px;
     margin-top: 4px;
@@ -45,10 +50,28 @@
   color: var(--text-primary);
 }
 
-.org_setting_content section p {
-    margin: 0;
+.org_setting_content .org_setting_section .description {
+  margin: 0;
   color: var(--text-secondary);
   margin-bottom: 12px;
+}
+
+.org_setting_content .org_setting_section button {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 10px 0;
+  border-radius: 12px;
+  box-shadow: 0 3px 6px var(--color-shadow);
+  font-size: large;
+  font-weight: 600;
+}
+.org_setting_content .org_setting_section button:hover {
+  background-color: var(--bg-secondary-dark);
+  border-color: var(--color-accent);
+  box-shadow: 0 5px 12px var(--color-shadow-strong);
+  color: var(--text-primary);
 }
 
 .error {
