@@ -13,18 +13,18 @@ export default function NavBar() {
   };
 
   return (
-    <header className="header">
-      <Link to={"/"}>
-        <h1 className="header-title">DidlydooDash</h1>
+    <header className="nav_container">
+      <Link className="nav_title" to={"/"}>
+        DidlydooDash
       </Link>
-      <ThemeToggle />
-      {user && (
-        <div className="header-profile">
-          <div id="basic-button">
+      <div className="nav_nav">
+        <ThemeToggle />
+        {user && (
+          <div className="nav_profile">
             <Avatar />
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </header>
   );
 }

@@ -1,0 +1,71 @@
+.organisation_layout {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	background-color: var(--bg-primary);
+	color: var(--text-primary);
+}
+
+.organisation_header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	padding: 12px 16px;
+	background-color: var(--bg-secondary);
+	border-bottom: 1px solid var(--border-color);
+	box-shadow: 0 2px 6px var(--color-shadow);
+}
+
+.org_back {
+	color: var(--text-secondary);
+	text-decoration: none;
+	font-weight: 500;
+	transition: color 0.2s ease;
+}
+.org_back:hover {
+	color: var(--color-contrast);
+}
+
+.org_title {
+	flex: 1;
+	text-align: center;
+	font-size: 1.3rem;
+	font-weight: 600;
+	margin: 0;
+}
+
+.org_nav {
+	display: flex;
+gap: 16px;
+}
+
+.org_nav a {
+	text-decoration: none;
+	color: var(--text-secondary);
+	font-weight: 500;
+	transition: color 0.2s ease;
+}
+
+.org_nav a:hover,
+.org_nav a.active {
+	color: var(--color-contrast);
+}
+
+.organisation_content {
+	position: relative;
+	flex: 1;
+	padding: 16px;
+	overflow-y: auto;
+	background-color: var(--bg-primary);
+	transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.organisation_content:enter {
+	opacity: 0;
+	transform: translateY(5px);
+}
+.organisation_content:enter-active {
+	opacity: 1;
+	transform: translateY(0);
+}

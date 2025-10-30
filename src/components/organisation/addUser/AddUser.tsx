@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import { API } from "@/services/api";
 import { useOrgStore } from "@/stores/organisation";
 import { useQueryClient } from "react-query";
+import Modal from "@/components/ui/Modal";
 
 export interface AddUserProps {
   members: OrgMember[];

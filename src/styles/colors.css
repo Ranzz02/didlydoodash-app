@@ -8,7 +8,15 @@
   --color-success: #22c55e;
   --color-shadow: rgba(0, 0, 0, 0.65);
   --color-shadow-strong: rgba(0, 0, 0, 0.85);
-  
+
+  --color-primary-light: color-mix(in srgb, var(--color-primary), white 8%);
+  --color-primary-dark: color-mix(in srgb, var(--color-primary), black 30%);
+
+  --color-secondary-light: color-mix(in srgb, var(--color-secondary), white 8%);
+  --color-secondary-dark: color-mix(in srgb, var(--color-secondary), black 30%);  
+
+  --color-error-light: color-mix(in srgb, var(--color-error), white 25%);
+  --color-error-dark: color-mix(in srgb, var(--color-error), black 50%);
 }
 
 :root[data-theme='light'] {
@@ -21,17 +29,19 @@
   --color-success: #16a34a;
   --color-shadow: rgba(0, 0, 0, 0.1);
   --color-shadow-strong: rgba(0, 0, 0, 0.2);
+
+  --color-primary-light: color-mix(in srgb, var(--color-primary), white 20%);
+  --color-primary-dark: color-mix(in srgb, var(--color-primary), black 20%);
+  
+  --color-secondary-light: color-mix(in srgb, var(--color-secondary), white 10%);
+  --color-secondary-dark: color-mix(in srgb, var(--color-secondary), #59797c 25%);  
+  
+  --color-error-light: color-mix(in srgb, var(--color-error), white 25%);
+  --color-error-dark: color-mix(in srgb, var(--color-error), black 50%);
 }
 
 :root {
   color-scheme: dark light;
-
-  
-  --color-primary-light: color-mix(in srgb, var(--color-primary), white 8%);
-  --color-primary-dark: color-mix(in srgb, var(--color-primary), black 30%);
-
-  --color-secondary-light: color-mix(in srgb, var(--color-secondary), white 8%);
-  --color-secondary-dark: color-mix(in srgb, var(--color-secondary), black 30%);
 
   --bg-primary-light: var(--color-primary-light);
   --bg-primary: var(--color-primary);

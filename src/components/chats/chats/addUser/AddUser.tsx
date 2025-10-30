@@ -7,6 +7,7 @@ import { useOrgStore } from "@/stores/organisation";
 import { useState } from "react";
 import { useChatStore } from "@/stores/organisation/chats";
 import { UserItem } from "@/components/users/item/User";
+import Modal from "@/components/ui/Modal";
 
 export interface AddUserProps {
   open: boolean;

@@ -19,6 +19,7 @@ import {
 } from "@/utils/types";
 import AddUser from "./addUser/AddUser";
 import { API, BASE_URL } from "@/services/api";
+import Tooltip from "@/components/ui/Tooltip";
 
 export default function Chats() {
   const { chats, openChatId, selectChat, removeMember } = useChatStore();
@@ -155,10 +156,10 @@ export default function Chats() {
           </div>
         </div>
         <div className="icons">
-          <Tooltip title="Add user to chat" placement="top-start">
+          <Tooltip title="Add user to chat" placement="top">
             <img src="/icons/plus.svg" alt="" onClick={handleAddUser} />
           </Tooltip>
-          <Tooltip title="Close chat" placement="top-start">
+          <Tooltip title="Close chat" placement="top">
             <img src="/icons/close.svg" alt="" onClick={handleCloseChat} />
           </Tooltip>
           <AddUser open={openAddUser} setOpen={setOpenAddUser} />

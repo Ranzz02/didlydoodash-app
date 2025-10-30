@@ -1,0 +1,21 @@
+.orgItem {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-secondary);
+    box-shadow: 2px 4px 6px var(--color-shadow);
+    border-radius: 12px;
+    padding: 6px 8px;
+    cursor: pointer;
+    transition: 
+        box-shadow 0.1s ease;
+}
+.orgItem:hover {
+    box-shadow: 4px 8px 12px var(--color-shadow-strong);
+}
+
+.orgTitle {
+    margin: 0;
+    padding: 0;
+    font-size: x-large;
+    font-style: normal;
+}

@@ -6,6 +6,7 @@ import "@/styles/main.css";
 import {
   createBrowserRouter,
   createRoutesFromElements,
+  Outlet,
   Route,
   RouterProvider,
 } from "react-router-dom";
@@ -32,8 +33,9 @@ import HomePage from "@/pages/private/Home";
 import ProfilePage from "@/pages/private/profile";
 
 // Organisation
-import OrganisationPage from "@/pages/private/organisations";
-import CreateOrganisationPage from "./pages/private/organisations/CreateOrganisation";
+import OrganisationsIndex from "./pages/private/organisations";
+import OrganisationDashboard from "@/pages/private/organisations/dashboard";
+import CreateOrganisation from "./pages/private/organisations/create";
 import ChatsPage from "@/pages/private/organisations/chats";
 
 // Projects
@@ -78,10 +80,15 @@ const router = createBrowserRouter(
           </Route>
 
           {/** Organisation routes */}
-          <Route path="/organisations" element={<OrganisationLayout />}>
-            <Route index element={<OrganisationPage />} />
-            <Route path="create" element={<CreateOrganisationPage />} />
-            <Route path="chats" element={<ChatsPage />} />
+          <Route path="/organisations" element={<Outlet />}>
+            <Route index element={<OrganisationsIndex />} />
+            <Route path="view/:organisationID" element={<OrganisationLayout />}>
+              <Route index element={<OrganisationDashboard />} />
+              <Route path="members" element={null} />
+              <Route path="settings" element={null} />
+              <Route path="chats" element={<ChatsPage />} />
+            </Route>
+            <Route path="create" element={<CreateOrganisation />} />
           </Route>
 
           {/** Profile routes */}

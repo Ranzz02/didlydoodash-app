@@ -3,6 +3,7 @@ import { useOrgStore } from "@/stores/organisation";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { API } from "@/services/api";
 import { toast } from "react-toastify";
+import Modal from "@/components/ui/Modal";
 
 export interface RemoveOrgProps {
   open: boolean;

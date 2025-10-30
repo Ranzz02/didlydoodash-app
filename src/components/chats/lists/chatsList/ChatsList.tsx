@@ -1,37 +1,35 @@
 import { useEffect, useState } from "react";
 import "./chatslist.css";
 import AddChat from "./addChat/AddChat";
-import { useChatStore } from "@/stores/organisation/chats";
 import { useQuery } from "react-query";
 import { Chat } from "@/utils/types";
 import { useOrgStore } from "@/stores/organisation";
 import { toast } from "react-toastify";
 import { API } from "@/services/api";
 import { useNotification } from "@/context/NotificationContext";
+import Tooltip from "@/components/ui/Tooltip";
+import Badge from "@/components/ui/Badge";
 
 export default function ChatsList() {
   const [addMore, setAddMore] = useState<boolean>(false);
   const [input, SetInput] = useState<string>("");
-  const { chats, openChatId, setChats, selectChat } = useChatStore();
+  const [chatId, selectChatId] = useState<string>();
   const { badges, resetBadge } = useNotification();
   const { organisation } = useOrgStore();
 
   // Fetch chats
-  const { isLoading, isError, error } = useQuery<Chat[], Error>(
-    ["chats", organisation],
-    getChats,
-    {
-      onSuccess: (data) => {
-        setChats(data);
-      },
-    }
-  );
+  const {
+    data: chats,
+    isLoading,
+    isError,
+    error,
+  } = useQuery<Chat[], Error>(["chats", organisation], getChats);
 
   const handleSelect = async (chat: Chat) => {
-    const foundChat = chats.find((item) => item.id === chat.id);
+    const foundChat = chats?.find((item) => item.id === chat.id);
 
     if (foundChat) {
-      selectChat(foundChat.id);
+      selectChatId(foundChat.id);
       badges.set(foundChat.id, 0);
     }
   };
@@ -46,8 +44,8 @@ export default function ChatsList() {
 
   // Example: Reset badge when a chat is opened
   useEffect(() => {
-    if (openChatId) resetBadge(openChatId); // Reset unread messages for the opened chat
-  }, [openChatId, resetBadge, badges]);
+    if (chatId) resetBadge(chatId); // Reset unread messages for the opened chat
+  }, [chatId, resetBadge, badges]);
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -79,9 +77,9 @@ export default function ChatsList() {
         </Tooltip>
       </div>
       {filteredChats.map((chat) => (
-        <Tooltip key={chat.id} title="Open chat" placement="bottom-start">
+        <Tooltip key={chat.id} title="Open chat" placement="bottom">
           <div className="item" style={{}} onClick={() => handleSelect(chat)}>
-            <Badge badgeContent={badges.get(chat.id) || 0} color="error">
+            <Badge content={badges.get(chat.id) || 0} variant="error">
               <img src="/icons/avatars/avatar-boy.svg" alt="" />
             </Badge>
             <div className="texts">

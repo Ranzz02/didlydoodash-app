@@ -14,7 +14,7 @@
 	transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.main-container {
+.container_main {
     flex: 1;
 	display: flex;
 	margin: 0;
@@ -22,7 +22,7 @@
 	position: relative;
 }
 
-.page-container {
+.container_page {
 	flex: 1;
 	display: flex;
 	flex-flow: column;

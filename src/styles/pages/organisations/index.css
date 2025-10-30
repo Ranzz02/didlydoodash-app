@@ -1,16 +1,16 @@
-.homeContainer {
+.organisations_container {
     flex: 1;
     display: flex;
     flex-direction: column;
     padding: 0 12px;
 }
 
-.homeContainer .title {
+.organisations_container .title {
     margin: 0;
     font-size: 35px;
 }
 
-.homeContainer .orgList {
+.organisations_container .orgList {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* ✅ responsive grid */
     gap: 16px; /* space between items */

@@ -1,5 +1,6 @@
 .sidenav {
   gap: 8px;
+  z-index: 1;
   margin: 0;
   padding: 10px 8px;
   width: 250px;
@@ -46,6 +47,7 @@
   box-shadow: 0 3px 6px var(--color-shadow);
   border-radius: 12px;
   text-decoration: none;
+  font-size: medium;
 }
 .item:hover {
   background-color: var(--bg-secondary-dark);
@@ -58,14 +60,13 @@
 }
 .sidenav.closed .item {
   padding: 8px;
-  max-width: 50px;
 }
 
 .itemSelect {
   display: flex;
+  cursor: pointer;
   flex-direction: column;
   position: relative;
-  width: 100%;
   gap: 6px;
 } /* Label text */
 .itemSelect label {
@@ -73,17 +74,21 @@
   font-size: medium;
   font-weight: 500;
   padding-left: 4px;
-  text-overflow: clip;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
 }
 /* Styled <select> itself */
 .itemSelect select {
   display:inline-flex;
+  font-size: medium;
   appearance: none;
   background-color: var(--bg-secondary-light);
   color: var(--text-primary);
   border: 1px solid var(--border-color);
   text-overflow: clip;
-  padding: 12px 8px;
+  padding: 8px 12px;
   border-radius: 10px;
   box-shadow: 0 3px 6px var(--color-shadow);
   cursor: pointer;
@@ -113,12 +118,17 @@
 }
 
 .sidenav.closed .itemSelect {
+  padding: 8px;
   align-items: center;
-  width: auto;
 }
 
 .sidenav.closed .itemSelect label {
-  display: none;
+  overflow: hidden;
+  display: block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: small;
+  max-width: 43px;
 }
 
 .sidenav.closed .itemSelect select {

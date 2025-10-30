@@ -6,9 +6,9 @@ export default function MainLayout() {
   return (
     <>
       <NavBar />
-      <main className="main-container">
+      <main className="container_main">
         <SideBar />
-        <div className="page-container">
+        <div className="container_page">
           <Outlet />
         </div>
       </main>

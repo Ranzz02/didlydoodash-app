@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import { useOrgStore } from "@/stores/organisation";
 import { useChatStore } from "@/stores/organisation/chats";
 import { useAuth } from "@/context/AuthContext";
+import Modal from "@/components/ui/Modal";
 
 export interface AddChatProps {
   open: boolean;
