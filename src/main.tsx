@@ -47,6 +47,7 @@ import ActiveProjectPage from "@/pages/private/project/activePage";
 import WhiteboardPage from "./pages/private/whiteboard";
 import KanbanLayout from "./layouts/KanbanLayout";
 import KanbanView from "./pages/private/kanban";
+import OrganisationSettingPage from "./pages/private/organisations/settings";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -82,10 +83,13 @@ const router = createBrowserRouter(
           {/** Organisation routes */}
           <Route path="/organisations" element={<Outlet />}>
             <Route index element={<OrganisationsIndex />} />
-            <Route path="view/:organisationID" element={<OrganisationLayout />}>
+            <Route
+              path="view/:organisationSlug"
+              element={<OrganisationLayout />}
+            >
               <Route index element={<OrganisationDashboard />} />
-              <Route path="members" element={null} />
-              <Route path="settings" element={null} />
+              <Route path="projects" element={null} />
+              <Route path="settings" element={<OrganisationSettingPage />} />
               <Route path="chats" element={<ChatsPage />} />
             </Route>
             <Route path="create" element={<CreateOrganisation />} />

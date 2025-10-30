@@ -12,8 +12,17 @@ export type Tokens = {
 
 export type Organisation = {
   id: string;
+  owner: User;
   name: string;
-  owner: OrgMember;
+  slug: string;
+  description?: string;
+  isActive: boolean;
+  timezone: string;
+  settings: JSON;
+
+  // Derived data
+  projects: Project[];
+  members: OrgMember[];
 };
 
 export type OrgMember = {

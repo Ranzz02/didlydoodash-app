@@ -1,4 +1,8 @@
 import { useTheme } from "@/hooks/useTheme";
+import "@/styles/components/themeToggle.css";
+
+import { FaMoon } from "react-icons/fa";
+import { FaSun } from "react-icons/fa";
 
 export default function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
@@ -6,16 +10,18 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="card"
-      style={{
-        border: "none",
-        borderRadius: "6px",
-        padding: "0.5rem 1rem",
-        cursor: "pointer",
-        fontWeight: 600,
-      }}
+      className={`theme-toggle ${theme === "dark" ? "dark" : "light"}`}
+      aria-label="Toggle theme"
+      aria-pressed={theme === "dark"}
     >
-      {theme === "light" ? "🌙 Dark Mode" : "☀️ Light Mode"}
+      <span className="theme-toggle__thumb" />
+      <span className="theme-toggle__icon">
+        {theme === "light" ? (
+          <FaSun color="orange" />
+        ) : (
+          <FaMoon color="white" />
+        )}
+      </span>
     </button>
   );
 }

@@ -4,7 +4,7 @@ import { API } from "@/services/api";
 import { Organisation, OrgMember, OrgRole, User } from "@/utils/types";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { toast } from "react-toastify";
-import "./create.css";
+import "@/styles/pages/organisations/create.css";
 import MemberItem from "@/components/organisation/member/item/MemberItem";
 import { useAuth } from "@/context/AuthContext";
 

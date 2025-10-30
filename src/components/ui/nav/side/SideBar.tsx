@@ -11,11 +11,9 @@ import { MdAddBox, MdSpaceDashboard } from "react-icons/md";
 import { GoOrganization } from "react-icons/go";
 
 import { useOrgStore } from "@/stores/organisation";
-import { useNotification } from "@/context/NotificationContext";
 import { NavItem } from "./NavItem";
 import Tooltip from "../../Tooltip";
 import Select from "../../Select";
-import Badge from "../../Badge";
 import { loadOrganisations } from "@/services/organisations";
 
 const NAV_ICON_SIZE = 25;
@@ -30,7 +28,6 @@ export default function SideBar() {
   );
 
   const [open, setOpen] = useState(true);
-  const { badges } = useNotification();
   const { organisation, setOrganisation, organisations, setOrganisations } =
     useOrgStore();
 
@@ -105,7 +102,7 @@ export default function SideBar() {
       {organisation && organisations && organisations.length > 0 && (
         <>
           <NavItem
-            to={`/organisations/view/${organisation.id}`}
+            to={`/organisations/view/${organisation.slug}`}
             text="Dashboard"
             icon={<MdSpaceDashboard size={NAV_ICON_SIZE} />}
             tooltip="Dashboard for organisation"

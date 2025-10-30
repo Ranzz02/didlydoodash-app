@@ -13,13 +13,20 @@ function OrganisationItem({ organisation }: ItemProps) {
 
   const handleSelect = () => {
     setOrganisation(organisation);
-    navigate(`/organisations/view/${organisation.id}`);
+    navigate(`/organisations/view/${organisation.slug}`);
   };
 
   return (
     <div className={styles.orgItem} onClick={handleSelect}>
       <h1 className={styles.orgTitle}>{organisation.name}</h1>
-      <p>{organisation.owner.user.username}</p>
+      {organisation.description && (
+        <p className={styles.orgDescription}>{organisation.description}</p>
+      )}
+      <div>
+        {organisation.timezone && (
+          <p className={styles.orgTimezone}>{organisation.timezone}</p>
+        )}
+      </div>
     </div>
   );
 }

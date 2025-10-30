@@ -1,0 +1,61 @@
+.theme-toggle {
+  position: relative;
+  width: 56px;
+  height: 30px;
+  border-radius: 28px;
+  border: 2px solid var(--border-color);
+  background-color: var(--bg-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+  padding: 0;
+  margin-left: 35px;
+}
+
+.theme-toggle__thumb {
+  position: absolute;
+  align-self: center;
+  left: 2px;
+  right: 2px;
+  width: 22px;
+  height: 22px;
+  border-radius: 100%;
+  background-color: var(--color-contrast);
+  box-shadow: 0 2px 5px var(--color-shadow);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Dark mode state */
+.theme-toggle.dark {
+  background-color: var(--bg-secondary-dark);
+}
+
+.theme-toggle.dark .theme-toggle__thumb {
+  transform: translateX(26px);
+  background-color: var(--color-accent);
+}
+
+/* Optional icon inside */
+.theme-toggle__icon {
+    position: absolute;
+    left: -35px;
+    display: flex;
+  font-size: 1.2rem;
+  user-select: none;
+  color: var(--text-secondary);
+}
+
+/* Hover & focus states */
+.theme-toggle:hover {
+  border-color: var(--color-contrast);
+  box-shadow: 0 0 5px color-mix(in srgb, var(--color-contrast), transparent 70%);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--color-contrast);
+  outline-offset: 2px;
+}

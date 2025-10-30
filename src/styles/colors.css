@@ -15,8 +15,8 @@
   --color-secondary-light: color-mix(in srgb, var(--color-secondary), white 8%);
   --color-secondary-dark: color-mix(in srgb, var(--color-secondary), black 30%);  
 
-  --color-error-light: color-mix(in srgb, var(--color-error), white 25%);
-  --color-error-dark: color-mix(in srgb, var(--color-error), black 50%);
+  --color-error-light: color-mix(in srgb, var(--color-error), white 5%);
+  --color-error-dark: color-mix(in srgb, var(--color-error), black 25%);
 }
 
 :root[data-theme='light'] {
@@ -36,8 +36,8 @@
   --color-secondary-light: color-mix(in srgb, var(--color-secondary), white 10%);
   --color-secondary-dark: color-mix(in srgb, var(--color-secondary), #59797c 25%);  
   
-  --color-error-light: color-mix(in srgb, var(--color-error), white 25%);
-  --color-error-dark: color-mix(in srgb, var(--color-error), black 50%);
+  --color-error-light: color-mix(in srgb, var(--color-error), white 30%);
+  --color-error-dark: color-mix(in srgb, var(--color-error), black 15%);
 }
 
 :root {
@@ -54,4 +54,6 @@
   --text-primary: var(--color-accent);
   --text-secondary: var(--color-neutral);
   --border-color: var(--color-neutral);
+
+  --color-error-translucent: color-mix(in srgb, var(--color-error), transparent 60%)
 }

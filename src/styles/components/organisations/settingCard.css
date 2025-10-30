@@ -1,0 +1,104 @@
+.setting_card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 3px 6px var(--color-shadow);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.3s ease,
+    transform 0.1s ease;
+}
+
+.setting_card.danger {
+    background-color: var(--color-error-translucent);
+}
+
+.setting_card:hover {
+  background-color: var(--bg-secondary-light);
+  box-shadow: 0 5px 12px var(--color-shadow-strong);
+  transform: translateY(-1px);
+}
+
+.setting_card_header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.setting_card_header h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.setting_card_header p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.setting_card_body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.setting_card_body input,
+.setting_card_body select,
+.setting_card_body textarea {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 0.95rem;
+  box-shadow: 0 2px 4px var(--color-shadow);
+  transition: border-color 0.2s ease, box-shadow 0.3s ease;
+}
+
+.setting_card_body input:focus,
+.setting_card_body select:focus,
+.setting_card_body textarea:focus {
+  outline: none;
+  border-color: var(--color-contrast);
+  box-shadow: 0 0 0 2px var(--color-contrast);
+}
+
+.setting_card_body button {
+  align-self: flex-start;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--color-contrast);
+  background-color: var(--color-contrast);
+  color: var(--bg-primary);
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease, box-shadow 0.3s ease;
+}
+
+.setting_card_body button:hover {
+  background-color: var(--color-contrast);
+  box-shadow: 0 3px 8px var(--color-shadow-strong);
+}
+
+
+.setting_card.danger {
+  border-color: var(--color-error-dark);
+  background-color: var(--color-error-translucent);
+}
+
+.setting_card.danger button {
+    background-color: var(--color-error-light);
+    border-color: var(--color-error);
+}
+
+.setting_card.danger button:hover {
+    background-color: var(--color-error);
+}

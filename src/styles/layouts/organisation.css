@@ -1,7 +1,7 @@
 .organisation_layout {
+	height: 100%;
 	display: flex;
 	flex-direction: column;
-	height: 100%;
 	background-color: var(--bg-primary);
 	color: var(--text-primary);
 }
@@ -18,21 +18,18 @@
 }
 
 .org_back {
+	display: flex;
+	flex-direction: row;
+	gap: 6px;
+	align-items: center;
 	color: var(--text-secondary);
 	text-decoration: none;
+	font-size: large;
 	font-weight: 500;
 	transition: color 0.2s ease;
 }
 .org_back:hover {
 	color: var(--color-contrast);
-}
-
-.org_title {
-	flex: 1;
-	text-align: center;
-	font-size: 1.3rem;
-	font-weight: 600;
-	margin: 0;
 }
 
 .org_nav {
@@ -47,6 +44,10 @@ gap: 16px;
 	transition: color 0.2s ease;
 }
 
+.org_nav a.active {
+	color: var(--color-contrast);
+}
+
 .org_nav a:hover,
 .org_nav a.active {
 	color: var(--color-contrast);
@@ -55,7 +56,8 @@ gap: 16px;
 .organisation_content {
 	position: relative;
 	flex: 1;
-	padding: 16px;
+	margin: 0;
+	padding: 6px 16px;
 	overflow-y: auto;
 	background-color: var(--bg-primary);
 	transition: opacity 0.2s ease, transform 0.2s ease;

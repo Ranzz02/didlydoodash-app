@@ -1,15 +1,17 @@
 .dashboardContainer {
     display: flex;
     flex-direction: column;
+    
+    h1 {
+        margin: 5px 0px;
+    }
 
-    .texts {
-        h1 {
-            margin: 5px 0px;
-        }
-
-        h2 {
-            margin: 0;
-        }
+    h2 {
+        margin: 0;
+    }
+    
+    .texts {   
+        
 
         span {
             margin: 0;

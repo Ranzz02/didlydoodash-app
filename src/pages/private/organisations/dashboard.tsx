@@ -4,13 +4,14 @@ import { getMembers } from "@/services/member";
 import { useOrgStore } from "@/stores/organisation";
 import { useQuery } from "react-query";
 import { useNavigate } from "react-router-dom";
+import "@/styles/pages/organisations/dashboard.css";
 
 export default function OrganisationDashboard() {
   const { organisation } = useOrgStore();
   const { user } = useAuth();
   const navigate = useNavigate();
 
-  const isOwner = organisation?.owner?.user?.id === user?.id;
+  const isOwner = organisation?.owner?.id === user?.id;
 
   const {
     data: members = [],
@@ -45,7 +46,7 @@ export default function OrganisationDashboard() {
 
       <div className="texts">
         <span>Owner:</span>
-        <MemberItem member={organisation.owner} />
+        {/* <MemberItem member={organisation.owner} /> */}
       </div>
       {/* 
       <MemberList members={members} isOwner={isOwner} />

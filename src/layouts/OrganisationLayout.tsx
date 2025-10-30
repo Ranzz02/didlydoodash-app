@@ -1,21 +1,42 @@
-import { Link, Outlet, useParams } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import "@/styles/layouts/organisation.css";
 
-export default function OrganisationLayout() {
-  const { organizationID } = useParams();
+import { FaBackspace } from "react-icons/fa";
 
+export default function OrganisationLayout() {
   return (
     <div className="organisation_layout">
       <header className="organisation_header">
-        <Link to="/organisations" className="org_back">
-          ← Organisations
-        </Link>
-        <h1 className="org_title">{organizationID}</h1>
+        <NavLink to="/organisations" className="org_back">
+          <FaBackspace size={25} />
+          Close
+        </NavLink>
         <nav className="org_nav">
-          <Link to=".">Overview</Link>
-          <Link to="members">Members</Link>
-          <Link to="chats">Chats</Link>
-          <Link to="settings">Settings</Link>
+          <NavLink
+            className={({ isActive }) => `${isActive && "active"}`}
+            to="."
+            end
+          >
+            Overview
+          </NavLink>
+          <NavLink
+            className={({ isActive }) => `${isActive && "active"}`}
+            to="projects"
+          >
+            Projects
+          </NavLink>
+          <NavLink
+            className={({ isActive }) => `${isActive && "active"}`}
+            to="chats"
+          >
+            Chats
+          </NavLink>
+          <NavLink
+            className={({ isActive }) => `${isActive && "active"}`}
+            to="settings"
+          >
+            Settings
+          </NavLink>
         </nav>
       </header>
 
